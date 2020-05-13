@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="接口自动化测试" parallel="methods" thread-count="1">
+	<parameter name="sheet_login" value="login"></parameter>
+	<test name="推送接口自动化测试" preserve-order="false"  enabled="true">
+		<classes>
+			<class name="com.mob.testcase.push.LoginCase"/>
+		</classes>
+	</test>
+</suite>
