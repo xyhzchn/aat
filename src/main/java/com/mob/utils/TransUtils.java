@@ -21,8 +21,10 @@ public class TransUtils {
             while (it.hasNext()){
                 String key = it.next().toString();
                 String value = json.get(key).toString();
-                Object real_value = NumberUtils.isNumber(value) == true?Integer.parseInt(value):value;
-                sb.append(key+"="+real_value+"&");
+                if(null != value && value != ""){
+                    Object real_value = NumberUtils.isNumber(value) == true?Integer.parseInt(value):value;
+                    sb.append(key+"="+real_value+"&");
+                }
             }
         }
         return sb.toString();
@@ -36,4 +38,6 @@ public class TransUtils {
         }
         return map;
     }
+
+
 }

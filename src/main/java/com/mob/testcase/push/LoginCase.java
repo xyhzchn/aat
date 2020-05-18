@@ -1,20 +1,19 @@
 package com.mob.testcase.push;
 
-import bsh.engine.BshScriptEngine;
 import com.alibaba.fastjson.JSONObject;
-import com.beust.jcommander.Parameter;
 import com.mob.common.Common;
+import com.mob.utils.Assertion;
 import com.mob.utils.RestAssuredUtils;
 import com.mob.utils.TransUtils;
 import io.restassured.response.Response;
-import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.*;
 import com.mob.pojo.Api;
 import com.mob.utils.ExcelUtils;
 
-import java.io.UnsupportedEncodingException;
 import java.util.*;
 
+@Listeners({com.mob.utils.AssertionListener.class})
 public class LoginCase {
 
     public List<Api> apiList;
@@ -43,10 +42,10 @@ public class LoginCase {
     }
 
     @Test
-    public void test() throws UnsupportedEncodingException {
+    public void test() {
+
         if(apiList != null){
             for(Api api:apiList){
-
                 String reqPath = Common.ENV_ADDR+api.getUrl();
                 String method = api.getMethod();
                 if(method.toUpperCase().equals(Common.POST)){
@@ -63,8 +62,14 @@ public class LoginCase {
                     while (it.hasNext()){
                         String key = it.next();
                         if(api.getResBody_Exp().containsKey(key)){
-                            Assert.assertEquals(api.getResBody_Exp().get(key),res.get(key));
-                            System.out.println(api.getCaseID()+":[预期结果] "+api.getResBody_Exp().get(key)+"[实际结果] "+res.get(key));
+                               Assertion.verifyEquals(api.getResBody_Exp().get(key),res.get(key),
+                                       "[测试接口]："+api.getUrl()
+                                               +"; [用例ID]："+api.getCaseID()
+                                                +"; [验证字段]: "+"["+key+"];");
+                               Reporter.log("[测试接口]："+api.getUrl()
+                                                +"; [用例ID]："+api.getCaseID()
+                                                +"; [预期结果]："+api.getResBody_Exp().get(key)
+                                                +"; [实际结果]："+res.get(key));
                         }
                     }
                 }
