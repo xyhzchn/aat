@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="148bcaf6-8938-4c9f-86de-fd9a2659d15a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/MobTools.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/android.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/ByteMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Const.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/NumberUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/api.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/reporter/ExtentTestNGIReporterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/reporter/ExtentTestNGIReporterListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/Conf5Case.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/Conf5Case.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/LoginCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/LoginCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/AssertionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/AssertionListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/EncryptUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/EncryptUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/push.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/push.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/security.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/security.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/LoginCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/LoginCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/AssertUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/RestAssuredUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/RestAssuredUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/TransUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/TransUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,27 +60,28 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5110294" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaProgects\aat\lib" />
+      <recent name="D:\ideaProgects\aat\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mob.utils" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaProgects\aat\src\main\resources" />
       <recent name="D:\ideaProgects\aat" />
       <recent name="D:\ideaProgects\aat\src" />
       <recent name="D:\ideaProgects\aat\src\main\java\excel" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.mob.utils" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaProgects\aat\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -194,7 +186,9 @@
       <workItem from="1589337774150" duration="16828000" />
       <workItem from="1589420553096" duration="10402000" />
       <workItem from="1589507620750" duration="12714000" />
-      <workItem from="1589766891516" duration="13859000" />
+      <workItem from="1589766891516" duration="15056000" />
+      <workItem from="1589872662652" duration="1361000" />
+      <workItem from="1590635229395" duration="13179000" />
     </task>
     <servers />
   </component>

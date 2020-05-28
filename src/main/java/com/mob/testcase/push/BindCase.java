@@ -3,6 +3,7 @@ package com.mob.testcase.push;
 import com.alibaba.fastjson.JSONObject;
 import com.mob.common.Common;
 import com.mob.pojo.Api;
+import com.mob.pojo.TcpPojo;
 import com.mob.utils.*;
 import io.restassured.response.Response;
 import org.testng.Reporter;
@@ -17,6 +18,9 @@ public class BindCase {
 
     public Response dependResponse;
     public Response response;
+    public TcpPojo tcp;
+
+
 
     @Parameters({ "sheet_bind" })
     @BeforeTest
@@ -52,7 +56,7 @@ public class BindCase {
                     TransUtils.json2StrForGet(api.getReqBody());
                 }
                 int statusCode = response.getStatusCode();
-//                if(statusCode == 200){
+                if(statusCode == 200 || statusCode == 500){
                     String str = response.getBody().asString();
                     String result = "";
                     if(statusCode == 200){
@@ -76,10 +80,12 @@ public class BindCase {
                                     +"; [实际结果]："+res.get(key));
                         }
                     }
-//                }
+                }
             }
         }
     }
+
+
 
     @AfterClass
     public void pass(){

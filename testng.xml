@@ -3,12 +3,14 @@
 <suite name="接口自动化测试" parallel="methods" thread-count="1">
 <!--	<parameter name="sheet_login" value="login"></parameter>-->
 <!--	<parameter name="sheet_conf5" value="conf5"></parameter>-->
-	<parameter name="sheet_bind" value="bind"></parameter>
+<!--	<parameter name="sheet_bind" value="bind"></parameter>-->
+	<parameter name="sheet_push" value="push"></parameter>
 	<test name="推送接口自动化测试" preserve-order="false"  enabled="true">
 		<classes>
 <!--			<class name="com.mob.testcase.push.LoginCase"/>-->
 <!--			<class name="com.mob.testcase.push.Conf5Case"/>-->
-			<class name="com.mob.testcase.push.BindCase"/>
+<!--			<class name="com.mob.testcase.push.BindCase"/>-->
+			<class name="com.mob.testcase.push.PushCase"/>
 		</classes>
 	</test>
 	<listeners>
