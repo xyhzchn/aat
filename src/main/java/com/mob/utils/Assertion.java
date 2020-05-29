@@ -1,6 +1,7 @@
 package com.mob.utils;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -73,4 +74,12 @@ public class Assertion {
         }
     }
 
+    //判断推送的消息是否到达客户端
+    public static void EqualsMessage(TcpUtils utils,String message){
+        Map<String, Object> map = utils.getMessage();
+        JSONObject jsonObject = new JSONObject(map);
+        JSONObject result = jsonObject.getJSONObject("message");
+        System.out.println(result);
+        Assert.assertEquals(result.getString("c"), message, "推送失败");
+    }
 }

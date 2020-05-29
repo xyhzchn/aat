@@ -1,5 +1,6 @@
 package com.mob.testcase.push;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mob.common.Common;
 import com.mob.pojo.Api;
@@ -9,13 +10,9 @@ import io.restassured.builder.ResponseBuilder;
 import io.restassured.response.Response;
 import org.testng.Reporter;
 import org.testng.annotations.*;
-
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class PushCase {
@@ -88,14 +85,15 @@ public class PushCase {
         String ipUrl = content.path("res.domainList[0]");
 
         tcp = new TcpPojo();
-        tcp.setHost(ipUrl.split(":")[0]);
+        tcp.setIp(ipUrl.split(":")[0]);
         tcp.setPort(Integer.parseInt(ipUrl.split(":")[1]));
         tcp.setRid(content.path("res.registrationId").toString());
         tcp.setPlat(1);
 
         new Thread(() -> {
-            sendTcp.startConnect(tcp.getHost(),tcp.getPort(),tcp.getRid(), 1);
+            sendTcp.startConnect(tcp.getIp(),tcp.getPort(),tcp.getRid(), 1);
         }).start();
+
     }
 
     @Test
@@ -103,24 +101,37 @@ public class PushCase {
 
         if(apiList != null){
             for(Api api:apiList){
-                String reqPath = Common.PUSH_TEST_ADDR+api.getUrl();
+
+                String content = "";
+                JSONObject pushNotify = JSONObject.parseObject(api.getReqBody().get("pushNotify").toString());
+                Map<String, Object> pushNotifyMap = TransUtils.json2map(pushNotify);
+                if(pushNotifyMap.containsKey("content")){
+                    content = (String) pushNotifyMap.get("content");
+                }
+
+
+                String reqPath = Common.CREATE_PUSH_TEST_ADDR+api.getUrl();
                 String method = api.getMethod();
                 if(method.toUpperCase().equals(Common.POST)){
-                    String reqBody = EncryptUtils.generalEncode(api.getReqBody().toJSONString(),"push.properties");
-                    response =  RestAssuredUtils.post(reqPath,reqBody,null);
+                   JSONObject body = new JSONObject();
+                   Set entry = api.getReqBody().keySet();
+                   Iterator it = entry.iterator();
+                   while (it.hasNext()){
+                       String key = it.next().toString();
+                       String value = api.getReqBody().get(key).toString();
+                       Object value1 = TransUtils.getValue(value);
+
+                       body.put(key,value1);
+                   }
+
+                    response =  RestAssuredUtils.post(reqPath,body,null);
                 }else if(method.toUpperCase().equals(Common.GET)){
                     TransUtils.json2StrForGet(api.getReqBody());
                 }
                 int statusCode = response.getStatusCode();
                 if(statusCode == 200 || statusCode == 500){
                     String str = response.getBody().asString();
-                    String result = "";
-                    if(statusCode == 200){
-                        result = EncryptUtils.generalDecode(str);
-                    }else {
-                        result = str;
-                    }
-                    JSONObject res = (JSONObject) JSONObject.parse(result);
+                    JSONObject res = (JSONObject) JSONObject.parse(str);
                     Set<String> resKey = res.keySet();
                     Iterator<String> it = resKey.iterator();
                     while (it.hasNext()){
@@ -136,6 +147,9 @@ public class PushCase {
                                     +"; [实际结果]："+res.get(key));
                         }
                     }
+
+//                    TcpUtils.syncInternWait(content,Common.normalTime);
+//                    Assertion.EqualsMessage(sendTcp,content);
                 }
             }
         }

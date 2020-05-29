@@ -39,5 +39,26 @@ public class TransUtils {
         return map;
     }
 
+    public static Object getValue(String obj){
+        if(null != obj){
+            if(NumberUtils.isCreatable(obj)){
+                return Integer.parseInt(obj);
+            }
+
+            if(isJson(obj)){
+                return JSONObject.parseObject(obj);
+            }
+        }
+        return obj;
+    }
+
+    public static boolean isJson(String content) {
+        try {
+            JSONObject.parseObject(content);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 
 }

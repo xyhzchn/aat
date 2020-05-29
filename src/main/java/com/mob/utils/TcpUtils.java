@@ -1,33 +1,28 @@
 package com.mob.utils;
 
+import android.os.Handler;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.lamfire.code.AES;
 import com.lamfire.code.Base64;
 import com.mob.pojo.ByteMsg;
 import com.mob.pojo.Const;
+import com.mob.web.security.common.SafeExecutor;
 import org.apache.commons.lang3.StringUtils;
 import org.testng.util.Strings;
-import com.mob.tools.utils.Hashon;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.HashMap;
-import android.os.Handler;
-import com.mob.web.security.common.SafeExecutor;
+import java.util.Map;
 
 public class TcpUtils {
 
-    private String host;
+    private String ip;
     private int port;
     private Integer plat;
     private Socket socket;
-    private Thread readThread;
     private String token;
-    private Handler handler;
     private int timeout = 10 * 1000;
     private final static int CONNECT = 2;
     private final static int RECONNECT = 3;
@@ -35,9 +30,10 @@ public class TcpUtils {
     private InputStream in;
     private OutputStream out ;
     private Object object;
+    private Map<String,Object> message;
 
-    public void startConnect(String host, int port, String rid, Integer plat , Object object) throws  JSONException{
-        this.host=host;
+    public void startConnect(String ip, int port, String rid, Integer plat , Object object) throws  JSONException{
+        this.ip=ip;
         this.port=port;
         this.rid = rid;
         this.plat = plat;
@@ -48,8 +44,8 @@ public class TcpUtils {
 
 
 
-    public void startConnect(String host, int port, String rid, Integer plat) throws JSONException {
-        this.host=host;
+    public void startConnect(String ip, int port, String rid, Integer plat) throws JSONException {
+        this.ip=ip;
         this.port=port;
         this.rid = rid;
         this.plat = plat;
@@ -59,9 +55,9 @@ public class TcpUtils {
 
     public void connectTCP() {
         try {
-            System.out.println("pushService tcp Init connect to {" + host + "}:{" + port + "}");
+            System.out.println("pushService tcp Init connect to {" + ip + "}:{" + port + "}");
             Socket socket = new Socket();
-            socket.connect(new InetSocketAddress(host, port), timeout);
+            socket.connect(new InetSocketAddress(ip, port), timeout);
             this.socket = socket;
             out = socket.getOutputStream();
             in = socket.getInputStream();
@@ -158,10 +154,6 @@ public class TcpUtils {
                     if (type == Const.TYPE_PUSH) {
                         decrypt(rid, res);
                         result = new String(res.getContent(), 0, res.getLength());
-                        /*byte[] enRes = android.util.Base64.decode(content, android.util.Base64.NO_WRAP);
-                        String rid = BaseProtocols.getRegistrationId();
-                        deRes = Data.AES128Decode(rid.getBytes(), enRes);
-                        result = new String(deRes, "utf-8");*/
 
                     } else {
                         result = new String(content, "utf-8");
@@ -170,15 +162,15 @@ public class TcpUtils {
                         }
                     }
 
-                    HashMap<String, Object> map = new Hashon().fromJson(result);
+                    Map<String, Object> map = TransUtils.json2map(JSONObject.parseObject(result));
 
-                    HashMap<String, Object> data = (HashMap<String, Object>) map.get("data");
+                    HashMap<String, Object> data = (HashMap<String, Object>) TransUtils.json2map(JSONObject.parseObject(map.get("data").toString()));
 
                     if (type == Const.TYPE_RESPONSE) {
                         int reType = (int) data.get("type");
                         if (reType == Const.TYPE_CONNECT_REDIRECT) {
                             String domain = (String) data.get("domain");
-                            host = domain.substring(0, domain.indexOf(":"));
+                            ip = domain.substring(0, domain.indexOf(":"));
                             port = Integer.valueOf(domain.substring(domain.indexOf(":") + 1));
                             redirect();
                             return;
@@ -187,16 +179,9 @@ public class TcpUtils {
                         }
                     } else if (type == Const.TYPE_PUSH) {
                         System.out.println("tcp>>>>>>>>>>>>>com.mob.data:"+data);
-//                        GlobalMobPush globalMobPush = new GlobalMobPush();
-//                        globalMobPush.setMessage(data);
+                        TcpUtils utils = new TcpUtils();
+                        utils.setMessage(data);
                         System.out.println("走到通知啦");
-                        /*synchronized ("MobPush_All_Android_Bigpicture.class") {
-                            MobPush_All_Android_Bigpicture.class.notifyAll();
-                        }*/
-                        /*synchronized (object) {
-                            System.out.println("object:"+object);
-                            object.notifyAll();
-                        }*/
                         String c = new com.alibaba.fastjson.JSONObject(data).getJSONObject("message").getString("c");
                         synchronized (c.intern()){
                             System.out.println(c);
@@ -313,4 +298,17 @@ public class TcpUtils {
         }
     }
 
+    public Map<String, Object> getMessage() {
+        return message;
+    }
+
+    public void setMessage(Map<String, Object> message) {
+        this.message = message;
+    }
+
+    public static void syncInternWait(String object, Long time){
+        synchronized (object.intern()) {
+            try { object.intern().wait(time); } catch (InterruptedException e) { }
+        }
+    }
 }

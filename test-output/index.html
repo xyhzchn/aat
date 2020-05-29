@@ -34,8 +34,7 @@
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
 		</ul>
 
 		<!-- report name -->
@@ -48,7 +47,7 @@
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<li>
                 <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>May 28, 2020 04:35:07 PM</span>
+                    <span class='label suite-start-time blue darken-3'>May 29, 2020 07:12:55 PM</span>
 				</a>
 			</li>
 			<li>
@@ -73,7 +72,7 @@
 					<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -124,10 +123,10 @@
 					<canvas id='parent-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -139,10 +138,10 @@
 					<canvas id='child-analysis' width='100' height='80'></canvas>
 				</div>
 				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> step(s) passed</span>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> step(s) passed</span>
 				</div>
 				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> others
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
 				</div>
 			</div>
 		</div>
@@ -157,17 +156,17 @@
 			<ul id='test-collection' class='test-collection'>
 				
 				
-				<li class='test displayed active  skip' status='skip' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
 						<span class='test-name'>test</span>
-						<span class='test-time'>May 28, 2020 04:35:07 PM</span>
-						<span class='test-status right skip'>skip</span>
+						<span class='test-time'>May 29, 2020 07:12:55 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>May 28, 2020 04:35:07 PM</span>
-	<span class='label end-time'>May 28, 2020 04:35:07 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
+	<span class='label start-time'>May 29, 2020 07:12:55 PM</span>
+	<span class='label end-time'>May 29, 2020 07:12:55 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+390ms</span>
 </div>
 	<div class='test-steps'>
 		<table class='bordered table-results'>
@@ -179,33 +178,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr class='log' status='skip'>
-					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
-					<td class='timestamp'>4:35:07 PM</td>
-					<td class='step-details'><pre>org.testng.TestNGException: 
-Parameter 'sheet_push' is required by BeforeTest on method init but has not been marked @Optional or defined
-in D:\ideaProgects\aat\testng.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:290)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:620)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:529)
-	at org.testng.TestRunner.run(TestRunner.java:497)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:73)
-	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-</pre></td>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>7:12:55 PM</td>
+					<td class='step-details'>[测试接口]：/v3/push/createPush; [用例ID]：1; [预期结果]：200; [实际结果]：200</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>7:12:55 PM</td>
+					<td class='step-details'>Test passed</td>
 				</tr>
 			</tbody>
 		</table>
@@ -238,90 +219,6 @@ in D:\ideaProgects\aat\testng.xml
 </div>
 <!-- test view -->
 <!-- category view -->
-<div id='exception-view' class='view hide'>
-
-    <section id='controls'>
-        <div class='controls grey lighten-4'>
-            <!-- search -->
-            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
-                <a href="#" class='search-div'>
-                    <i class='material-icons'>search</i> Search
-                </a>
-
-                <div class='input-field left hide'>
-                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-                </div>
-
-            </div>
-            <!-- search -->
-        </div>
-    </section>
-
-    <div class='subview-left left'>
-
-        <div class='view-summary'>
-            <h5>Exceptions</h3>
-                <ul id='exception-collection' class='exception-collection'>
-
-                        <li class='exception displayed active'>
-                            <div class='exception-heading'>
-                                <span class='exception-name'>org.testng.TestNGException</span>
-                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
-                            </div>
-                            <div class='exception-content hide'>
-                                <div class='exception-tests'>
-                                    <table class='bordered table-results'>
-                                        <thead>
-                                        <tr>
-                                            <th>Timestamp</th>
-                                            <th>TestName</th>
-                                            <th>Status</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                                    <tr>
-                                                        <td>May 28, 2020 04:35:07 PM</td>
-                                                        <td class='linked' test-id='1'>test</td>
-                                                        <td><pre><pre>org.testng.TestNGException: 
-Parameter 'sheet_push' is required by BeforeTest on method init but has not been marked @Optional or defined
-in D:\ideaProgects\aat\testng.xml
-	at org.testng.internal.Parameters.createParams(Parameters.java:290)
-	at org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
-	at org.testng.internal.Parameters.createParameters(Parameters.java:620)
-	at org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:529)
-	at org.testng.TestRunner.run(TestRunner.java:497)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:73)
-	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
-</pre></pre></td>
-                                                    </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </li>
-                </ul>
-        </div>
-    </div>
-
-    <div class='subview-right left'>
-        <div class='view-summary'>
-            <h5 class='exception-name'></h5>
-        </div>
-    </div>
-</div>
 <!-- exception view -->
 <div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
@@ -343,19 +240,19 @@ in D:\ideaProgects\aat\testng.xml
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>May 28, 2020 04:35:07 PM</div>
+					<div class='panel-lead'>May 29, 2020 07:12:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>May 28, 2020 04:35:07 PM</div>
+			 		<div class='panel-lead'>May 29, 2020 07:12:55 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0ms</div>
+					<div class='panel-lead'>390ms</div>
 				</div>
 			</div>
 		</div>
@@ -368,20 +265,20 @@ in D:\ideaProgects\aat\testng.xml
 
 		<script>
 			var statusGroup = {
-				passParent: 0,
+				passParent: 1,
 				failParent: 0,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
-				skipParent: 1,
-				exceptionsParent: 1,
+				skipParent: 0,
+				exceptionsParent: 0,
 				
-				passChild: 0,
+				passChild: 1,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
-				skipChild: 1,
+				skipChild: 0,
 				infoChild: 0,
 				exceptionsChild: 1,
 				

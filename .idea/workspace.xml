@@ -2,21 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="148bcaf6-8938-4c9f-86de-fd9a2659d15a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/MobTools.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/android.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/ByteMsg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/NumberUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/api.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/pojo/TcpPojo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/pojo/TcpPojo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/Conf5Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/Conf5Case.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/Assertion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/Assertion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/AssertionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/AssertionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/EncryptUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/EncryptUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +193,7 @@
       <workItem from="1589507620750" duration="12714000" />
       <workItem from="1589766891516" duration="15056000" />
       <workItem from="1589872662652" duration="1361000" />
-      <workItem from="1590635229395" duration="13179000" />
+      <workItem from="1590635229395" duration="24375000" />
     </task>
     <servers />
   </component>
@@ -231,9 +236,29 @@
           <line>83</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/MobTools.jar!/com/mob/tools/utils/Hashon.class</url>
+          <line>28</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$PROJECT_DIR$/lib/MobTools.jar!/com/mob/tools/utils/Hashon.class</url>
+          <line>47</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java</url>
+          <line>79</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="TestNG">
+        <watch expression="result" />
+        <watch expression="api.getReqBody().toJSONString()" />
+        <watch expression="api.getReqBody()" />
+      </configuration>
       <configuration name="Application">
         <watch expression="MobCSStandardCrypter" />
       </configuration>
