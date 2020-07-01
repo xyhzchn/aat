@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 import org.testng.Reporter;
 import org.testng.annotations.*;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -51,7 +52,7 @@ public class BindCase {
                 String method = api.getMethod();
                 if(method.toUpperCase().equals(Common.POST)){
                     String reqBody = EncryptUtils.generalEncode(api.getReqBody().toJSONString(),"push.properties");
-                    response =  RestAssuredUtils.post(reqPath,reqBody,null);
+                    response =  RestAssuredUtils.post(reqPath,reqBody,api.getReqHeader());
                 }else if(method.toUpperCase().equals(Common.GET)){
                     TransUtils.json2StrForGet(api.getReqBody());
                 }

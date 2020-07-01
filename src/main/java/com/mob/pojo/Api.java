@@ -3,16 +3,19 @@ package com.mob.pojo;
 import com.alibaba.fastjson.JSONObject;
 
 import java.util.Arrays;
+import java.util.Map;
 
 public class Api {
     private String url;
     private String method;
     private String[] argName;
     private String dependUrl;
+    private int dependID;
     private String[] dependName;
     private int caseID;
     private String caseName;
     private boolean isRun;
+    private Map reqHeader;
     private JSONObject reqBody;
     private JSONObject resBody_Exp;
 
@@ -96,6 +99,21 @@ public class Api {
         this.resBody_Exp = resBody_Exp;
     }
 
+    public int getDependID() {
+        return dependID;
+    }
+
+    public void setDependID(int dependID) {
+        this.dependID = dependID;
+    }
+
+    public Map getReqHeader() {
+        return reqHeader;
+    }
+
+    public void setReqHeader(Map reqHeader) {
+        this.reqHeader = reqHeader;
+    }
 
     @Override
     public String toString() {
@@ -104,10 +122,12 @@ public class Api {
                 ", method='" + method + '\'' +
                 ", argName=" + Arrays.toString(argName) +
                 ", dependUrl='" + dependUrl + '\'' +
+                ", dependID=" + dependID +
                 ", dependName=" + Arrays.toString(dependName) +
-                ", caseID='" + caseID + '\'' +
+                ", caseID=" + caseID +
                 ", caseName='" + caseName + '\'' +
                 ", isRun=" + isRun +
+                ", reqHeader=" + reqHeader +
                 ", reqBody=" + reqBody +
                 ", resBody_Exp=" + resBody_Exp +
                 '}';

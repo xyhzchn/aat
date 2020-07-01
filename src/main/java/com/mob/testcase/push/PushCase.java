@@ -23,7 +23,7 @@ public class PushCase {
     public Response response;
     public TcpPojo tcp;
     public Api dependApi;
-    TcpUtils sendTcp = new TcpUtils();
+    public TcpUtils sendTcp = new TcpUtils();
 
 
     @Parameters({ "sheet_push" })
@@ -45,12 +45,9 @@ public class PushCase {
     public void pre() throws Exception {
 
         if(apiList != null){
-            String dependUrl = apiList.get(0).getDependUrl();
-            String[] dependUrlArr = dependUrl.split(",");
-            String sheet = dependUrlArr[0];
-            int caseId = Integer.parseInt(dependUrlArr[1]);
-
-            if(null != dependUrl && !(dependUrl.equals(""))){
+            String sheet = apiList.get(0).getDependUrl();
+            int caseId = apiList.get(0).getDependID();
+            if(null != sheet && !(sheet.equals(""))){
                 List<Api> dependList = new ExcelUtils().getExcelContent(sheet);
                 if(dependList != null){
                     for(Api api:dependList){
@@ -69,7 +66,8 @@ public class PushCase {
         String method = dependApi.getMethod();
         if(method.toUpperCase().equals(Common.POST)){
             String reqBody = EncryptUtils.generalEncode(dependApi.getReqBody().toJSONString(),"push.properties");
-            res1 =  RestAssuredUtils.post(reqPath,reqBody,null);
+            System.out.println("bind接口请求明文： "+dependApi.getReqBody().toJSONString());
+            res1 =  RestAssuredUtils.post(reqPath,reqBody,dependApi.getReqHeader());
         }else if(method.toUpperCase().equals(Common.GET)){
             TransUtils.json2StrForGet(dependApi.getReqBody());
         }
@@ -79,6 +77,7 @@ public class PushCase {
         if(statusCode == 200){
             String str = res1.getBody().asString();
             String result = EncryptUtils.generalDecode(str);
+            System.out.println("bind接口返回响应值 "+ result);
             dependResponse = new ResponseBuilder().clone(res1).setBody(result).setHeader("Content-Type", "application/json").build();
         }
         Response content = dependResponse.then().statusCode(200).extract().response();
@@ -107,6 +106,7 @@ public class PushCase {
                 Map<String, Object> pushNotifyMap = TransUtils.json2map(pushNotify);
                 if(pushNotifyMap.containsKey("content")){
                     content = (String) pushNotifyMap.get("content");
+                    System.out.println("推送内容为："+content);
                 }
 
 
@@ -123,14 +123,16 @@ public class PushCase {
 
                        body.put(key,value1);
                    }
+                    System.out.println("push接口的请求参数： "+body.toJSONString());
 
                     response =  RestAssuredUtils.post(reqPath,body,null);
                 }else if(method.toUpperCase().equals(Common.GET)){
                     TransUtils.json2StrForGet(api.getReqBody());
                 }
                 int statusCode = response.getStatusCode();
-                if(statusCode == 200 || statusCode == 500){
+                if(statusCode == 200){
                     String str = response.getBody().asString();
+                    System.out.println("push接口的响应："+ str);
                     JSONObject res = (JSONObject) JSONObject.parse(str);
                     Set<String> resKey = res.keySet();
                     Iterator<String> it = resKey.iterator();
@@ -148,8 +150,8 @@ public class PushCase {
                         }
                     }
 
-//                    TcpUtils.syncInternWait(content,Common.normalTime);
-//                    Assertion.EqualsMessage(sendTcp,content);
+                    TcpUtils.syncInternWait(content,Common.normalTime);
+                    Assertion.EqualsMessage(sendTcp,content);
                 }
             }
         }

@@ -74,10 +74,10 @@ public class TcpUtils {
         try {
             System.out.println("pushService login tcp by rid:" + rid );
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("appkey","moba6b6c6d6");
+            jsonObject.put("appkey","2dbe655e88c80");
             jsonObject.put("plat", plat);
             jsonObject.put("rid", rid);
-            jsonObject.put("sdkVersion","20304");
+            jsonObject.put("sdkVersion","30004");
             String content = jsonObject.toString();
             int contentLength = content.getBytes("utf-8").length;
             ByteMsg byteMsg = new ByteMsg();
@@ -179,8 +179,8 @@ public class TcpUtils {
                         }
                     } else if (type == Const.TYPE_PUSH) {
                         System.out.println("tcp>>>>>>>>>>>>>com.mob.data:"+data);
-                        TcpUtils utils = new TcpUtils();
-                        utils.setMessage(data);
+//                        TcpUtils utils = new TcpUtils();
+                        this.message = data;
                         System.out.println("走到通知啦");
                         String c = new com.alibaba.fastjson.JSONObject(data).getJSONObject("message").getString("c");
                         synchronized (c.intern()){

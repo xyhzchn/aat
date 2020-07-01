@@ -4,23 +4,16 @@
     <list default="true" id="148bcaf6-8938-4c9f-86de-fd9a2659d15a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/api.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/common/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/TcpPojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Api.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TransUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/common/Common.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/pojo/TcpPojo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/pojo/TcpPojo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/reporter/ExtentTestNGIReporterListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/Conf5Case.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/Conf5Case.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/Assertion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/Assertion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/AssertionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/AssertionListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/EncryptUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/EncryptUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,28 +58,29 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../apiautotest" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5110294" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\ideaProgects\aat\lib" />
-      <recent name="D:\ideaProgects\aat\src\main\resources" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.mob.utils" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\ideaProgects\aat\src\main\resources" />
       <recent name="D:\ideaProgects\aat" />
       <recent name="D:\ideaProgects\aat\src" />
       <recent name="D:\ideaProgects\aat\src\main\java\excel" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mob.utils" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\ideaProgects\aat" />
+      <recent name="D:\ideaProgects\aat\lib" />
+      <recent name="D:\ideaProgects\aat\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -102,13 +96,6 @@
     </option>
   </component>
   <component name="RunManager" selected="TestNG.D:/ideaProgects/aat/testng.xml">
-    <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Demo" />
-      <module name="aat" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EncryptUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mob.utils.EncryptUtils" />
       <module name="aat" />
@@ -131,6 +118,23 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BindCase" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="aat" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mob.testcase.push.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.mob.testcase.push" />
+      <option name="MAIN_CLASS_NAME" value="com.mob.testcase.push.BindCase" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,10 +169,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.D:/ideaProgects/aat/testng.xml" />
+        <item itemvalue="TestNG.BindCase" />
         <item itemvalue="Application.EncryptUtils" />
         <item itemvalue="TestNG.LoginCase" />
         <item itemvalue="Application.ExcelUtils" />
-        <item itemvalue="Application.Demo" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +197,9 @@
       <workItem from="1589507620750" duration="12714000" />
       <workItem from="1589766891516" duration="15056000" />
       <workItem from="1589872662652" duration="1361000" />
-      <workItem from="1590635229395" duration="24375000" />
+      <workItem from="1590635229395" duration="33467000" />
+      <workItem from="1592880122824" duration="2395000" />
+      <workItem from="1593309834338" duration="24181000" />
     </task>
     <servers />
   </component>
@@ -249,15 +255,20 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/mob/utils/Assertion.java</url>
           <line>79</line>
-          <option name="timeStamp" value="59" />
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java</url>
+          <line>153</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="TestNG">
         <watch expression="result" />
-        <watch expression="api.getReqBody().toJSONString()" />
-        <watch expression="api.getReqBody()" />
+        <watch expression="tcp" />
+        <watch expression="data" />
       </configuration>
       <configuration name="Application">
         <watch expression="MobCSStandardCrypter" />

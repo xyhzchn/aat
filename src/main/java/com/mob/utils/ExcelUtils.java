@@ -9,7 +9,9 @@ import com.mob.pojo.Api;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ExcelUtils {
 
@@ -20,6 +22,7 @@ public class ExcelUtils {
     private String method;
     private String[] argName;
     private String dependUrl;
+    private int dependID;
     private String[] dependName;
 
     public static Workbook getWorkbook(InputStream inputStream,String fileType) throws IOException {
@@ -93,18 +96,19 @@ public class ExcelUtils {
             method = sheet.getRow(1).getCell(1).getStringCellValue().toLowerCase();
             argName = sheet.getRow(2).getCell(1).getStringCellValue().split(",");
             dependUrl = sheet.getRow(3).getCell(1).getStringCellValue();
-            dependName = sheet.getRow(4).getCell(1).getStringCellValue().split(",");
+            dependID = sheet.getRow(4).getCell(1).getStringCellValue().equals("") ? 0 : Integer.parseInt(sheet.getRow(4).getCell(1).getStringCellValue());
+            dependName = sheet.getRow(5).getCell(1).getStringCellValue().split(",");
 
-            int rowStart = 6;
+            int rowStart = 7;
             int rowEnd = sheet.getPhysicalNumberOfRows();
 
             int colStart = 0;
-            int colEnd = sheet.getRow(5).getPhysicalNumberOfCells();
+            int colEnd = sheet.getRow(6).getPhysicalNumberOfCells();
 
             Api api = null;
             for(int rowNum = rowStart;rowNum<rowEnd;rowNum++){
                 Row row = sheet.getRow(rowNum);
-                Row menuRow = sheet.getRow(5);
+                Row menuRow = sheet.getRow(6);
                 JSONObject reqBody = new JSONObject();
                 JSONObject resBody_Exp = new JSONObject();
                 api = new Api();
@@ -128,10 +132,29 @@ public class ExcelUtils {
                         }
                     }
 
+                    if(menuRow.getCell(colNum).getStringCellValue().equals("header")){
+                        String header = cell.getStringCellValue();
+                        if(!(header.equals(""))){
+                            String[] headers = header.split(",");
+                            Map reqHeader = new HashMap();
+                            if(headers.length > 0){
+                                for(String head:headers){
+                                    String[] key_value = head.split("=");
+                                    reqHeader.put(key_value[0],key_value[1]);
+                                }
+                            }
+                            api.setReqHeader(reqHeader);
+                        }
+                    }
+
                     if(menuRow.getCell(colNum).getStringCellValue().endsWith("_Req")){
                         String str = menuRow.getCell(colNum).getStringCellValue();
-                        reqBody.put(str.substring(0,str.lastIndexOf("_")),
-                                NumberUtils.isNumber(cell.getStringCellValue())==true?Integer.parseInt(cell.getStringCellValue()):cell.getStringCellValue());
+                        if(cell.getStringCellValue() != "" && cell.getStringCellValue().length() > 5){
+                            reqBody.put(str.substring(0,str.lastIndexOf("_")),cell.getStringCellValue());
+                        }else{
+                            reqBody.put(str.substring(0,str.lastIndexOf("_")),
+                                    NumberUtils.isNumber(cell.getStringCellValue())==true?Integer.parseInt(cell.getStringCellValue()):cell.getStringCellValue());
+                        }
                     }
 
                     if(menuRow.getCell(colNum).getStringCellValue().endsWith("_Exp")){
@@ -145,6 +168,7 @@ public class ExcelUtils {
                 api.setMethod(method);
                 api.setArgName(argName);
                 api.setDependUrl(dependUrl);
+                api.setDependID(dependID);
                 api.setDependName(dependName);
                 api.setReqBody(reqBody);
                 api.setResBody_Exp(resBody_Exp);
