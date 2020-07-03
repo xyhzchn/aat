@@ -4,17 +4,12 @@
     <list default="true" id="148bcaf6-8938-4c9f-86de-fd9a2659d15a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/api.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/pojo/Api.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/BindCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/RestAssuredUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCaseAndroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mob/utils/TcpUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/pojo/Api.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/BindCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/ExcelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/testcase/push/PushCase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mob/utils/TcpUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mob/utils/TcpUtils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,29 +53,30 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../apiautotest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.5110294" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\ideaProgects\aat\src\main\resources" />
-      <recent name="D:\ideaProgects\aat" />
-      <recent name="D:\ideaProgects\aat\src" />
-      <recent name="D:\ideaProgects\aat\src\main\java\excel" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.mob.utils" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\ideaProgects\aat" />
       <recent name="D:\ideaProgects\aat\lib" />
       <recent name="D:\ideaProgects\aat\src\main\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.mob.testcase.push" />
+      <recent name="com.mob.utils" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\ideaProgects\aat\src\main\resources" />
+      <recent name="D:\ideaProgects\aat" />
+      <recent name="D:\ideaProgects\aat\src" />
+      <recent name="D:\ideaProgects\aat\src\main\java\excel" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -200,6 +196,8 @@
       <workItem from="1590635229395" duration="33467000" />
       <workItem from="1592880122824" duration="2395000" />
       <workItem from="1593309834338" duration="24181000" />
+      <workItem from="1593683722270" duration="722000" />
+      <workItem from="1593742337847" duration="3706000" />
     </task>
     <servers />
   </component>
@@ -258,8 +256,8 @@
           <option name="timeStamp" value="98" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCase.java</url>
-          <line>153</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/mob/testcase/push/PushCaseAndroid.java</url>
+          <line>152</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>

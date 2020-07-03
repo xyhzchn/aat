@@ -1,6 +1,5 @@
 package com.mob.testcase.push;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mob.common.Common;
 import com.mob.pojo.Api;
@@ -10,12 +9,13 @@ import io.restassured.builder.ResponseBuilder;
 import io.restassured.response.Response;
 import org.testng.Reporter;
 import org.testng.annotations.*;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class PushCase {
+public class PushCaseIOS {
 
     public List<Api> apiList;
 
@@ -26,7 +26,7 @@ public class PushCase {
     public TcpUtils sendTcp = new TcpUtils();
 
 
-    @Parameters({ "sheet_push" })
+    @Parameters({ "sheet_push_iOS" })
     @BeforeTest
     public void init(String sheet_push){
         apiList = new ExcelUtils().getExcelContent(sheet_push);
@@ -87,10 +87,9 @@ public class PushCase {
         tcp.setIp(ipUrl.split(":")[0]);
         tcp.setPort(Integer.parseInt(ipUrl.split(":")[1]));
         tcp.setRid(content.path("res.registrationId").toString());
-        tcp.setPlat(1);
 
         new Thread(() -> {
-            sendTcp.startConnect(tcp.getIp(),tcp.getPort(),tcp.getRid(), 1);
+            sendTcp.startConnect(tcp.getIp(),tcp.getPort(),tcp.getRid(), dependApi);
         }).start();
 
     }

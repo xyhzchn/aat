@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
 import com.lamfire.code.AES;
 import com.lamfire.code.Base64;
+import com.mob.pojo.Api;
 import com.mob.pojo.ByteMsg;
 import com.mob.pojo.Const;
 import com.mob.web.security.common.SafeExecutor;
@@ -20,7 +21,7 @@ public class TcpUtils {
 
     private String ip;
     private int port;
-    private Integer plat;
+    private Api bindApi;
     private Socket socket;
     private String token;
     private int timeout = 10 * 1000;
@@ -36,7 +37,6 @@ public class TcpUtils {
         this.ip=ip;
         this.port=port;
         this.rid = rid;
-        this.plat = plat;
         this.object = object;
         close();
         connectTCP();
@@ -44,11 +44,11 @@ public class TcpUtils {
 
 
 
-    public void startConnect(String ip, int port, String rid, Integer plat) throws JSONException {
+    public void startConnect(String ip, int port, String rid, Api bindApi) throws JSONException {
         this.ip=ip;
         this.port=port;
         this.rid = rid;
-        this.plat = plat;
+        this.bindApi = bindApi;
         close();
         connectTCP();
     }
@@ -62,7 +62,7 @@ public class TcpUtils {
             out = socket.getOutputStream();
             in = socket.getInputStream();
             System.out.println("pushService tcp connect successful.");
-            sendLogin(plat);
+            sendLogin(bindApi);
             receive();
         } catch (IOException e) {
             System.out.println("pushService Init connect failed, error:" + e);
@@ -70,23 +70,27 @@ public class TcpUtils {
         }
     }
 
-    public void sendLogin(Integer plat)  {
+    public void sendLogin(Api bindApi)  {
         try {
             System.out.println("pushService login tcp by rid:" + rid );
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("appkey","2dbe655e88c80");
-            jsonObject.put("plat", plat);
-            jsonObject.put("rid", rid);
-            jsonObject.put("sdkVersion","30004");
-            String content = jsonObject.toString();
-            int contentLength = content.getBytes("utf-8").length;
-            ByteMsg byteMsg = new ByteMsg();
-            byteMsg.setHead(Const.HEAD_PACKAGE);
-            byteMsg.setLength(contentLength);
-            byteMsg.setType(Const.TYPE_REGISTERED);
-            byteMsg.setContent(content.getBytes());
 
-            sendMsg(socket, byteMsg);
+            if(null != bindApi){
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("appkey",bindApi.getReqBody().get("appkey"));
+                jsonObject.put("plat", bindApi.getReqBody().get("plat"));
+                jsonObject.put("rid", rid);
+                jsonObject.put("sdkVersion",bindApi.getReqBody().get("sdkver"));
+                String content = jsonObject.toString();
+                int contentLength = content.getBytes("utf-8").length;
+                ByteMsg byteMsg = new ByteMsg();
+                byteMsg.setHead(Const.HEAD_PACKAGE);
+                byteMsg.setLength(contentLength);
+                byteMsg.setType(Const.TYPE_REGISTERED);
+                byteMsg.setContent(content.getBytes());
+
+                sendMsg(socket, byteMsg);
+            }
+
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException e) {
